@@ -1,4 +1,8 @@
 <?php
+/** @noinspection PhpMissingParamTypeInspection */
+/** @noinspection PhpMissingReturnTypeInspection */
+/** @noinspection PhpMissingFieldTypeInspection */
+
 /**
  * ApiClient
  *
@@ -29,8 +33,8 @@
 namespace DocuSign\eSign\Client;
 
 use DocuSign\eSign\Client\Auth\OAuth;
-use \DocuSign\eSign\Configuration;
-use \DocuSign\eSign\ObjectSerializer;
+use DocuSign\eSign\Configuration;
+use DocuSign\eSign\ObjectSerializer;
 use SebastianBergmann\RecursionContext\InvalidArgumentException;
 use Firebase\JWT\JWT;
 
@@ -419,7 +423,6 @@ class ApiClient
                 } elseif (!$key) {
                     $headers[0] = trim($h[0]);
                 }
-                trim($h[0]);
             }
         }
 
@@ -487,7 +490,7 @@ class ApiClient
 
         $resourcePath = "/oauth/token";
         $queryParams = [];
-        $integrator_and_secret_key = "Basic " . utf8_decode(base64_encode("{$client_id}:{$client_secret}"));
+        $integrator_and_secret_key = "Basic " . mb_convert_encoding(base64_encode("$client_id:$client_secret"), 'ISO-8859-1', 'UTF-8');
         $headers = [
             "Authorization" => $integrator_and_secret_key,
             "Content-Type" => "application/x-www-form-urlencoded",
@@ -525,8 +528,8 @@ class ApiClient
             throw new \InvalidArgumentException('Missing the required parameter $refresh_token when calling refreshAccessToken'); 
         }
         $resourcePath = "/oauth/token"; 
-        $queryParams = []; 
-        $integrator_and_secret_key = "Basic " . utf8_decode(base64_encode("{$client_id}:{$client_secret}")); 
+        $queryParams = [];
+        $integrator_and_secret_key = "Basic " . mb_convert_encoding(base64_encode("$client_id:$client_secret"), 'ISO-8859-1', 'UTF-8');
         $headers = [ 
             "Authorization" => $integrator_and_secret_key, 
             "Content-Type" => "application/x-www-form-urlencoded", 
