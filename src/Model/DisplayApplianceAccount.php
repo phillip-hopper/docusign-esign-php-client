@@ -195,7 +195,7 @@ class DisplayApplianceAccount implements ModelInterface, ArrayAccess
      * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
         $this->container['opt_out_auto_nav_text_and_tab_color_updates'] = isset($data['opt_out_auto_nav_text_and_tab_color_updates']) ? $data['opt_out_auto_nav_text_and_tab_color_updates'] : null;

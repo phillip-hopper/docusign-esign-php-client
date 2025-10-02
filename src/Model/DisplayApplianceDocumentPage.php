@@ -153,7 +153,7 @@ class DisplayApplianceDocumentPage implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['doc_page_count_total'] = isset($data['doc_page_count_total']) ? $data['doc_page_count_total'] : null;
         $this->container['document_id'] = isset($data['document_id']) ? $data['document_id'] : null;

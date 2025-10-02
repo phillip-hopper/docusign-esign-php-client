@@ -377,7 +377,7 @@ class EnvelopeTemplateResult implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['allow_markup'] = isset($data['allow_markup']) ? $data['allow_markup'] : null;
         $this->container['allow_reassign'] = isset($data['allow_reassign']) ? $data['allow_reassign'] : null;
