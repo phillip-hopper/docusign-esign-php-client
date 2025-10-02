@@ -137,7 +137,7 @@ class OcrRequest implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['ocr_language'] = isset($data['ocr_language']) ? $data['ocr_language'] : null;
         $this->container['page_selection'] = isset($data['page_selection']) ? $data['page_selection'] : null;

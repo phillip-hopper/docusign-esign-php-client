@@ -173,7 +173,7 @@ class DisplayApplianceEnvelope implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['add_demo_stamp'] = isset($data['add_demo_stamp']) ? $data['add_demo_stamp'] : null;
         $this->container['allow_multiple_attachments'] = isset($data['allow_multiple_attachments']) ? $data['allow_multiple_attachments'] : null;
